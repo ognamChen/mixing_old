@@ -27,33 +27,6 @@
     </div>
   </div>
 </footer>
-<script>
-var length;
-$(document).ready(function(){
-  $(".carousel-inner .carousel-item:first").addClass("active");
-  // $("#mainNav").load('https://clab.org.tw');
-});
-
-
-
-function jq_readmore(n) {
-  var currentContent = $(n).parents(".folder_box").find(".jq_card_content");
-  if ($(n).html() === "read more") {
-    $(currentContent).show("slow");
-    $(n).html("close");
-  } else {
-    $(n).html("read more");
-    $(currentContent).hide("slow");
-  }
-}
-
-function jq_close(n) {
-  var currentContent = $(n).parents(".folder_box").find(".jq_card_content");
-  $(currentContent).hide("slow");
-  $(n).parents(".folder_box").find("#jq_readmore a").html("read more");
-}
-
-</script>
 </body>
 
 </html>

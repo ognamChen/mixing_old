@@ -1,0 +1,404 @@
+/*
+Theme Name: winterIslanders
+Theme URI: 
+Author: 
+Author URI: 
+Description: Twenty Seventeen brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentyseventeen
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@mixin transform($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+}
+
+@mixin transition($property) {
+    transition: $property;
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -o-transition: $property;
+}
+
+$break-medium: 767px;
+$break-small: 575px;
+
+$box_shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.459);
+$font-color: #1b1e21;
+$link-color: #1b1e21;
+$link-hover-color: #de270f;
+
+body {
+    word-break: break-all !important;
+
+    img,
+    video {
+        @include transition(0.5s);
+        opacity: 0;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        color: $font-color;
+
+        @media (max-width: $break-medium) {
+            font-size: 13px;
+        }
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: $font-color;
+        padding: 10px;
+    }
+
+    a:hover {
+        text-decoration: none !important;
+    }
+}
+
+footer {
+    margin: 20px 0 !important;
+
+    a {
+        color: $link-color;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+
+.background-logo {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.header_image img {
+    margin: 0 auto;
+    width: 300px;
+    filter: brightness(80%);
+    float: right;
+}
+
+.og-breadth {
+    @include transition(0.5s);
+    overflow: hidden;
+    max-height: 300px;
+
+    &:hover {
+        @include transform(scale(1.05));
+    }
+}
+
+.og-box {
+    overflow: hidden;
+    padding: 10px;
+
+    img {
+        width: 100%;
+        height: auto;
+        @include transition(0.5s);
+
+        &:hover {
+            @include transform(scale(1.05));
+        }
+    }
+
+    .title {
+        margin-bottom: 0px;
+        padding-top: 10px;
+        font-size: 23px;
+        @include transition(0.5s);
+    }
+
+    .og-page .title {
+        font-size: 23px;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 40px;
+    }
+
+    .meta {
+        margin-bottom: 0px;
+        @include transition(0.5s);
+    }
+}
+
+.og-body {
+    .readmore {
+        position: absolute;
+        right: 25px;
+        bottom: 0px;
+
+        @media (max-width: $break-medium) {
+            right: 15px;
+        }
+    }
+}
+
+.og-post {
+    padding: 10px;
+
+    .meta {
+        padding: 30px;
+    }
+
+    .info {
+        p {
+            padding-left: 10px;
+            color: gray;
+        }
+
+        a {
+            @include transition(0.5s);
+            color: $link-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-hover-color;
+            }
+        }
+    }
+}
+
+.og-category {
+    p {
+        @include transition(0.5s);
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        padding-bottom: 5px;
+    }
+
+    h1 {
+        padding: 10px;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+
+    .tag {
+        font-size: 22px !important;
+        margin-bottom: 20px;
+        color: #343a40;
+
+        @media (max-width: $break-medium) {
+            font-size: 14px;
+        }
+    }
+}
+
+.og-carousel {
+    height: 420px;
+    border: 1px solid #dee2e6;
+
+    h2 {
+        color: white !important;
+
+        @media (max-width: $break-medium) {
+            font-size: 1.2rem;
+        }
+
+    }
+
+    .carousel-indicators {
+        bottom: 0px !important;
+        cursor: pointer;
+
+        li {
+            border-radius: 10px;
+            margin: 0px 6px;
+            height: 10px;
+            max-width: 10px;
+            background-color: #f8f9fa;
+            @include transition(0.5s);
+
+            &:hover {
+                background-color: $link-hover-color;
+            }
+        }
+
+        .active {
+            background-color: #495057;
+            max-width: 10px;
+            margin: 0px 6px;
+            height: 10px;
+        }
+
+    }
+
+    .carousel-item {
+        p {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        &:hover {
+            img {
+                @include transform(scale(1.05));
+                @include transition(0.5s);
+            }
+        }
+    }
+
+    .carousel-inner {
+        cursor: pointer;
+        max-height: 600px;
+        overflow: hidden;
+
+        .og-body {
+            position: absolute;
+            right: 0;
+            bottom: 127px;
+            left: 0;
+            z-index: 15;
+            display: flex;
+            padding-left: 0;
+            display: block;
+
+            @media (max-width: $break-small) {
+                bottom: 20px;
+            }
+        }
+
+        &:hover {
+            .og-body {
+                display: none;
+            }
+        }
+    }
+
+    .og-body h1 {
+        font-size: 5.5rem;
+        color: $font-color;
+    }
+}
+
+.og-form-control {
+    border-radius: 0px !important;
+
+    &:focus {
+        border-color: #dee2e6 !important;
+        box-shadow: none !important;
+    }
+}
+
+.tagcloud {
+    a {
+        color: $link-color !important;
+
+        &:hover {
+            color: $link-hover-color !important;
+        }
+    }
+}
+
+.wpp-list {
+    a {
+        color: $link-color;
+        font-size: 20px;
+
+        p {
+            color: $font-color;
+            font-size: 20px;
+        }
+
+        &:hover,
+        &:hover p {
+            color: $link-hover-color;
+
+        }
+    }
+}
+
+@mixin navigation {
+    color: $font-color;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+    padding-top: 5px;
+}
+
+.navigation li {
+    display: inline-block;
+
+    a {
+        @include navigation();
+
+        &:hover {
+            text-decoration: none;
+            color: $link-color;
+            background-color: transparent;
+            border: 1px solid #bdbdbd;
+        }
+    }
+
+    &.active a {
+        color: #FAFAFA;
+        background-color: #1b1e21;
+    }
+
+    &.disabled {
+        @include navigation();
+    }
+
+    &.pagLink1 {
+        a {
+            display: inline;
+            color: #bdbdbd;
+            text-decoration: none;
+        }
+
+        &.active a,
+        & a:hover {
+            color: #1b1e21;
+            text-decoration: none;
+            background-color: transparent;
+            border: none !important;
+        }
+    }
+
+    &.pagLink2 {
+        a {
+            display: inline;
+            color: #1b1e21;
+            text-decoration: none;
+        }
+
+        &.active a,
+        & a:hover {
+            color: #bdbdbd;
+            text-decoration: none;
+            background-color: transparent;
+            border: none !important;
+        }
+    }
+}
+
+.og-comments {
+    padding: 10px;
+}

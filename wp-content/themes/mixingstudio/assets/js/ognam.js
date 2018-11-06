@@ -11,7 +11,6 @@ $(document).ready(function () {
     }, function () {
         $(".og-under-orange-1", this).css("background-color", "white");
     });
-    // $("img").addClass("img-fluid");
     fixAutofunc();
 
     $(window).resize(function () {
