@@ -1735,30 +1735,30 @@ function gallery_shortcode( $attr ) {
 	 *                    Defaults to false if the theme supports HTML5 galleries.
 	 *                    Otherwise, defaults to true.
 	 */
-	if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
-		$gallery_style = "
-		<style type='text/css'>
-			#{$selector} {
-				margin: auto;
-			}
-			#{$selector} .gallery-item {
-				float: {$float};
-				margin-top: 10px;
-				text-align: center;
-				width: {$itemwidth}%;
-			}
-			#{$selector} img {
-				border: 2px solid #cfcfcf;
-			}
-			#{$selector} .gallery-caption {
-				margin-left: 0;
-			}
-			/* see gallery_shortcode() in wp-includes/media.php */
-		</style>\n\t\t";
-	}
+	// if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
+	// 	$gallery_style = "
+	// 	<style type='text/css'>
+	// 		#{$selector} {
+	// 			margin: auto;
+	// 		}
+	// 		#{$selector} .gallery-item {
+	// 			float: {$float};
+	// 			margin: 5px;
+	// 			text-align: center;
+	// 			width: {$itemwidth}%;
+	// 		}
+	// 		#{$selector} img {
+
+	// 		}
+	// 		#{$selector} .gallery-caption {
+	// 			margin-left: 0;
+	// 		}
+	// 		/* see gallery_shortcode() in wp-includes/media.php */
+	// 	</style>\n\t\t";
+	// }
 
 	$size_class = sanitize_html_class( $atts['size'] );
-	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$gallery_div = "<div id='$selector' class='gallery row justify-content-around galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 
 	/**
 	 * Filters the default gallery shortcode CSS styles.
@@ -1787,7 +1787,38 @@ function gallery_shortcode( $attr ) {
 		if ( isset( $image_meta['height'], $image_meta['width'] ) ) {
 			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
 		}
-		$output .= "<{$itemtag} class='gallery-item'>";
+
+		switch ($columns) {
+			case 1:
+			$output .= "<{$itemtag} class='gallery-item col-md-12'>";
+			break;
+			case 2:
+			$output .= "<{$itemtag} class='gallery-item col-md-6'>";
+			break;
+			case 3:
+			$output .= "<{$itemtag} class='gallery-item col-md-4'>";
+			break;
+			case 4:
+			$output .= "<{$itemtag} class='gallery-item col-md-3'>";
+			break;
+			case 5:
+			$output .= "<{$itemtag} class='gallery-item col-md-2'>";
+			break;
+			case 6:
+			$output .= "<{$itemtag} class='gallery-item col-md-2'>";
+			break;
+			case 7:
+			$output .= "<{$itemtag} class='gallery-item col-md-1'>";
+			break;
+			case 8:
+			$output .= "<{$itemtag} class='gallery-item col-md-3'>";
+			break;
+			case 9:
+			$output .= "<{$itemtag} class='gallery-item col-md-4'>";
+			break;
+			default:
+			$output .= "<{$itemtag} class='gallery-item'>";
+		}
 		$output .= "
 			<{$icontag} class='gallery-icon {$orientation}'>
 				$image_output

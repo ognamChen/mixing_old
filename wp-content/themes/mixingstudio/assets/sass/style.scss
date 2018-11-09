@@ -31,7 +31,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 $break-medium: 767px;
 $break-small: 575px;
 
-$box_shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.459);
+$box_shadow: 0px 6px 10px -6px rgba(0, 0, 0, 0.5);
+$background-color-1: #fff;
 $font-color: #1b1e21;
 $link-color: #1b1e21;
 $link-hover-color: #de270f;
@@ -156,7 +157,7 @@ footer {
     padding: 10px;
 
     .meta {
-        padding: 30px;
+        padding: 20px;
     }
 
     .info {
@@ -175,6 +176,15 @@ footer {
             }
         }
     }
+}
+
+.og-bc-1 {
+    background-color: $background-color-1;
+    box-shadow: $box_shadow;
+}
+
+.og-bc-t {
+    background-color: transparent;
 }
 
 .og-category {
@@ -204,7 +214,6 @@ footer {
 }
 
 .og-carousel {
-    height: 420px;
     border: 1px solid #dee2e6;
 
     h2 {
@@ -302,34 +311,6 @@ footer {
     }
 }
 
-.tagcloud {
-    a {
-        color: $link-color !important;
-
-        &:hover {
-            color: $link-hover-color !important;
-        }
-    }
-}
-
-.wpp-list {
-    a {
-        color: $link-color;
-        font-size: 20px;
-
-        p {
-            color: $font-color;
-            font-size: 20px;
-        }
-
-        &:hover,
-        &:hover p {
-            color: $link-hover-color;
-
-        }
-    }
-}
-
 @mixin navigation {
     color: $font-color;
     text-decoration: none;
@@ -402,3 +383,4 @@ footer {
 .og-comments {
     padding: 10px;
 }
+
