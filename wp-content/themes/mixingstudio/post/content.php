@@ -14,8 +14,9 @@
         <div class="row">
             <div class="col-md-12 og-border-1">
                 <div class="og-post">
-                    <img src="<?php the_post_thumbnail_url()?>" class="img-fluid" alt="Responsive image">
-                    <p style="color:red;"><?php echo get_the_post_thumbnail_caption() ?></p>
+                    <?php if (has_post_thumbnail()): ?>
+                        <img src="<?php the_post_thumbnail_url()?>" class="img-fluid" alt="Responsive image">
+                    <?php endif; ?>
                     <div class="title m-b-30">
                         <h1><?php the_title();?></h1>
                         <div class="info">

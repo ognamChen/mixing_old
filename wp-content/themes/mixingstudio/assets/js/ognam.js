@@ -34,25 +34,13 @@ $(document).ready(function () {
             $(".jq_home_search").show();
         }
     }
+
+    // youtube_video
+    $(".og-video-list .video-list").click(function () {
+        var video = $(this).data("video");
+        var url = "https://www.youtube.com/embed/" + video;
+        $("#video-player").attr('src', url);
+    })
+
+    $($(".og-video-list .video-list")[0]).click();
 });
-
-
-// var content = $('main'),
-// 	header = $('header');
-
-// $(content).clone().prependTo(header).addClass('blurred');
-
-// var blur = 'blur(.5em)';
-// $('.blurred').css({
-// 'background': '#fff',
-// '-webkit-filter': blur,
-// 'filter': blur
-// });
-
-// $(document).scroll(function(){
-// var scroll = $(this).scrollTop();
-// $('.blurred').css({
-// 	'-webkit-transform' : 'translateY(-'+scroll+'px)',
-// 	'transform' : 'translateY(-'+scroll+'px)'
-// });
-// })

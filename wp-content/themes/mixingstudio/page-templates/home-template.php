@@ -43,6 +43,14 @@ Template Name: 首頁
 		<div class="container-fluid">
 			<div style="height:500px;"></div>
 		</div>
+		<div class="container-fluid og-bc-2">
+			<div class="row">
+				<div class="col-md-8">
+					<?php get_template_part('post-content/youtubePost'); ?>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
 	</div>
 </main>
 <?php get_footer();
