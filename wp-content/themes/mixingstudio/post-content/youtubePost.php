@@ -1,11 +1,11 @@
 <section id="youtubePost">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-lg-8">
 			<div class="og-video">
 				<iframe class="video-player" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-lg-4">
 			<div class="og-video-list">
 				<ul class="wpp-list list-unstyled">
 				<?php

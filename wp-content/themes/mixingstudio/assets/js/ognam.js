@@ -39,10 +39,11 @@ $(document).ready(function () {
 
 $(function () {
     // youtube_video
+    var first_video = "https://www.youtube.com/embed/" + $(".og-video-list .video-list:first").data("video");
+    $(".video-player").attr('src', first_video);
     $(".og-video-list .video-list").click(function () {
         var video = $(this).data("video");
         var url = "https://www.youtube.com/embed/" + video;
         $(".video-player").attr('src', url);
     })
-    $(".og-video-list .video-list")[0].click();
 });

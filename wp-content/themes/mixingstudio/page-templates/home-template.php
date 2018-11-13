@@ -48,7 +48,9 @@ Template Name: 首頁
 				<div class="col-md-8">
 					<?php get_template_part('post-content/youtubePost'); ?>
 				</div>
-				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<?php get_template_part('post-content/blogPost'); ?>
+				</div>
 			</div>
 		</div>
 	</div>
