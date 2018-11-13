@@ -1,6 +1,5 @@
 var length;
 $(document).ready(function () {
-
     $("body img").css("opacity", "1");
 
     $(".carousel-inner .carousel-item:first").addClass("active");
@@ -35,12 +34,15 @@ $(document).ready(function () {
         }
     }
 
+
+});
+
+$(function () {
     // youtube_video
     $(".og-video-list .video-list").click(function () {
         var video = $(this).data("video");
         var url = "https://www.youtube.com/embed/" + video;
-        $("#video-player").attr('src', url);
+        $(".video-player").attr('src', url);
     })
-
-    $($(".og-video-list .video-list")[0]).click();
+    $(".og-video-list .video-list")[0].click();
 });
