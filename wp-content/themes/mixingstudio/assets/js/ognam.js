@@ -1,8 +1,17 @@
 var length;
 $(document).ready(function () {
+
+    $('.owl-carousel').owlCarousel({
+        margin: 10,
+        loop: true,
+        items: 1,
+        stagePadding: 100
+    });
+
+
     $("body img").css("opacity", "1");
 
-    $(".carousel-inner .carousel-item:first").addClass("active");
+    // $(".carousel-inner .carousel-item:first").addClass("active");
     // $("#mainNav").load('https://clab.org.tw');
 
     $(".og-category a").hover(function () {
